@@ -1,13 +1,15 @@
 package ru.itis.hateoas.models;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.itis.hateoas.enums.Access;
 
 import javax.persistence.*;
-import java.util.*;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,6 +24,10 @@ public class User {
     private Long id;
     private String login;
     private String password;
+
+    @Enumerated(value = EnumType.STRING)
+    @NotNull
+    private Access access;
 
     @OneToMany(mappedBy = "receiver")
     @OrderBy("date DESC")

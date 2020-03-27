@@ -1,0 +1,23 @@
+= Описание API
+
+== Методы
+
+|===
+Метод| Назначение
+|`PUT`| Обновить сущность или ее состояние
+|===
+
+=== Добавление ответа на вопрос
+Добавлять ответы можно только на вопросы, на которые не ответили ранее
+
+.request
+
+include::{snippets}/answer_question/http-request.adoc[]
+
+.response
+
+include::{snippets}/answer_question/http-response.adoc[]
+
+.response-fields
+
+include::{snippets}/answer_question/response-fields.adoc[]

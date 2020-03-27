@@ -3,6 +3,7 @@ package ru.itis.hateoas;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import ru.itis.hateoas.enums.Access;
 import ru.itis.hateoas.models.Message;
 import ru.itis.hateoas.models.Question;
 import ru.itis.hateoas.models.User;
@@ -27,11 +28,13 @@ public class HateoasApplication {
         User lesya = User.builder()
                 .login("lesya")
                 .password("qwe")
+                .access(Access.ALLOWED)
                 .build();
 
         User stepa = User.builder()
                 .login("stepa")
                 .password("qwe")
+                .access(Access.ALLOWED)
                 .build();
 
         userRepository.saveAll(asList(lesya, stepa));
